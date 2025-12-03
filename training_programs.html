@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Training Programs - EduVerse Driving Academy</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Explore EduVerse's comprehensive driving training programs. Choose from Deep Learning, Advanced Learning, and Systematic Learning approaches for 2-wheeler and 4-wheeler vehicles." />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Feduversed7960back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <header class="bg-surface shadow-subtle sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-10 w-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="20" fill="#1e40af"/>
+                            <path d="M12 20c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8-8-3.6-8-8z" fill="#10b981"/>
+                            <path d="M16 20h8M20 16v8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-accent text-primary">EduVerse</h1>
+                        <p class="text-xs text-text-secondary">Driving Academy</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="homepage.html" class="nav-link">Home</a>
+                        <a href="training_programs.html" class="nav-link active">Training Programs</a>
+                        <a href="about_edu_verse.html" class="nav-link">About Us</a>
+                        <a href="contact_hub.html" class="nav-link">Contact</a>
+                        <a href="student_dashboard.html" class="nav-link">Student Login</a>
+                        <a href="enrollment_portal.html" class="btn-primary ml-4">Enroll Now</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-text-secondary hover:text-primary p-2" onclick="toggleMobileMenu()">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-surface border-t border-border">
+                    <a href="homepage.html" class="nav-link block">Home</a>
+                    <a href="training_programs.html" class="nav-link active block">Training Programs</a>
+                    <a href="about_edu_verse.html" class="nav-link block">About Us</a>
+                    <a href="contact_hub.html" class="nav-link block">Contact</a>
+                    <a href="student_dashboard.html" class="nav-link block">Student Login</a>
+                    <a href="enrollment_portal.html" class="btn-primary block text-center mt-4">Enroll Now</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-secondary-50 py-16">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-accent text-primary mb-6">Choose Your Perfect Training Program</h1>
+            <p class="text-lg text-text-secondary mb-8 max-w-3xl mx-auto">
+                Discover personalized learning paths designed to build confidence and expertise. From comprehensive Deep Learning to focused Advanced techniques, find the program that matches your goals.
+            </p>
+            
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-3 gap-6 max-w-2xl mx-auto">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-secondary">12+</div>
+                    <div class="text-sm text-text-secondary">Program Options</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-secondary">95%</div>
+                    <div class="text-sm text-text-secondary">Success Rate</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-secondary">15k+</div>
+                    <div class="text-sm text-text-secondary">Graduates</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intelligent Filtering System -->
+    <section class="py-12 bg-surface sticky top-16 z-40 border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-6">
+                <h2 class="text-2xl font-semibold text-primary mb-6 text-center">Find Your Ideal Program</h2>
+                
+                <div class="grid md:grid-cols-4 gap-6">
+                    <!-- Vehicle Type Filter -->
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Vehicle Type</label>
+                        <select id="vehicle-filter" class="form-input w-full" onchange="filterPrograms()">
+                            <option value>All Vehicles</option>
+                            <option value="2-wheeler">2-Wheeler</option>
+                            <option value="4-wheeler">4-Wheeler</option>
+                        </select>
+                    </div>
+
+                    <!-- Learning Methodology Filter -->
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Learning Style</label>
+                        <select id="methodology-filter" class="form-input w-full" onchange="filterPrograms()">
+                            <option value>All Methods</option>
+                            <option value="deep">Deep Learning</option>
+                            <option value="advanced">Advanced Learning</option>
+                            <option value="systematic">Systematic Learning</option>
+                        </select>
+                    </div>
+
+                    <!-- Duration Filter -->
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Duration</label>
+                        <select id="duration-filter" class="form-input w-full" onchange="filterPrograms()">
+                            <option value>Any Duration</option>
+                            <option value="short">1-2 Weeks</option>
+                            <option value="medium">3-4 Weeks</option>
+                            <option value="long">5+ Weeks</option>
+                        </select>
+                    </div>
+
+                    <!-- Price Range Filter -->
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Budget (INR)</label>
+                        <select id="price-filter" class="form-input w-full" onchange="filterPrograms()">
+                            <option value>Any Budget</option>
+                            <option value="budget">Under ₹5,000</option>
+                            <option value="mid">₹5,000 - ₹10,000</option>
+                            <option value="premium">Above ₹10,000</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Filter Actions -->
+                <div class="flex justify-between items-center mt-6">
+                    <div class="flex items-center space-x-4">
+                        <button onclick="resetFilters()" class="text-text-secondary hover:text-primary transition-colors">
+                            <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                            </svg>
+                            Reset Filters
+                        </button>
+                        <span id="results-count" class="text-sm text-text-secondary">Showing 12 programs</span>
+                    </div>
+                    
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-text-secondary">Compare:</span>
+                        <button id="compare-btn" onclick="toggleComparison()" class="btn-secondary text-sm py-2 px-4 opacity-50 cursor-not-allowed" disabled>
+                            Compare Selected (0)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Recommendation Engine -->
+    <section id="recommendations" class="py-12 bg-gradient-to-r from-accent-50 to-primary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-semibold text-primary mb-4">Recommended For You</h2>
+                <p class="text-text-secondary">Based on your preferences and learning style</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6" id="recommended-programs">
+                <!-- Recommended programs will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Programs Grid -->
+    <section class="py-16 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl font-accent text-primary">All Training Programs</h2>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-text-secondary">Sort by:</span>
+                    <select id="sort-filter" class="form-input" onchange="sortPrograms()">
+                        <option value="popular">Most Popular</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="duration">Duration</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8" id="programs-grid">
+                <!-- Deep Learning Programs -->
+                <div class="program-card card p-6 relative" data-vehicle="2-wheeler" data-methodology="deep" data-duration="long" data-price="premium">
+                    <div class="absolute top-4 right-4">
+                        <input type="checkbox" class="compare-checkbox w-5 h-5 text-primary" onchange="updateComparison(this)" data-program="deep-2wheeler" />
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="badge-success">Most Popular</div>
+                        <div class="flex items-center space-x-1">
+                            <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">4.9 (324 reviews)</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <img src="https://images.pexels.com/photos/2116475/pexels-photo-2116475.jpeg?auto=compress&cs=tinysrgb&w=400" alt="2-Wheeler Deep Learning" class="w-full h-48 object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-primary mb-2">2-Wheeler Deep Learning Program</h3>
+                    <p class="text-text-secondary mb-4">Comprehensive theoretical foundation with extended practice hours for thorough skill development.</p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Duration:</span>
+                            <span class="font-medium">6 Weeks</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Practice Hours:</span>
+                            <span class="font-medium">40 Hours</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Theory Classes:</span>
+                            <span class="font-medium">20 Sessions</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Pass Rate:</span>
+                            <span class="font-medium text-secondary">98%</span>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-border pt-4 mb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-bold text-primary">₹12,500</span>
+                            <span class="text-sm text-text-secondary line-through">₹15,000</span>
+                        </div>
+                        <div class="text-sm text-secondary">EMI from ₹2,084/month</div>
+                    </div>
+
+                    <div class="space-y-2 mb-6">
+                        <div class="text-sm font-medium text-text-primary">Key Features:</div>
+                        <ul class="text-sm text-text-secondary space-y-1">
+                            <li>• Advanced simulator training</li>
+                            <li>• Traffic psychology modules</li>
+                            <li>• Defensive riding techniques</li>
+                            <li>• Weather condition training</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.pixabay.com/photo/2016/11/29/09/38/adult-1868750_1280.jpg" alt="Instructor" class="w-10 h-10 rounded-full object-cover mr-3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div>
+                            <div class="text-sm font-medium text-primary">Kavita Singh</div>
+                            <div class="text-xs text-text-secondary">8+ Years Experience</div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3">
+                        <a href="enrollment_portal.html" class="btn-primary flex-1 text-center">Enroll Now</a>
+                        <button onclick="viewDetails('deep-2wheeler')" class="btn-secondary px-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Advanced Learning Program -->
+                <div class="program-card card p-6 relative" data-vehicle="4-wheeler" data-methodology="advanced" data-duration="medium" data-price="premium">
+                    <div class="absolute top-4 right-4">
+                        <input type="checkbox" class="compare-checkbox w-5 h-5 text-primary" onchange="updateComparison(this)" data-program="advanced-4wheeler" />
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="badge-warning">Advanced</div>
+                        <div class="flex items-center space-x-1">
+                            <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">4.8 (256 reviews)</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=compress&cs=tinysrgb&w=400" alt="4-Wheeler Advanced Learning" class="w-full h-48 object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-primary mb-2">4-Wheeler Advanced Learning Program</h3>
+                    <p class="text-text-secondary mb-4">Focus on complex driving scenarios and advanced defensive techniques for experienced learners.</p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Duration:</span>
+                            <span class="font-medium">4 Weeks</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Practice Hours:</span>
+                            <span class="font-medium">30 Hours</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Theory Classes:</span>
+                            <span class="font-medium">12 Sessions</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Pass Rate:</span>
+                            <span class="font-medium text-secondary">96%</span>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-border pt-4 mb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-bold text-primary">₹15,000</span>
+                            <span class="text-sm text-text-secondary line-through">₹18,000</span>
+                        </div>
+                        <div class="text-sm text-secondary">EMI from ₹2,500/month</div>
+                    </div>
+
+                    <div class="space-y-2 mb-6">
+                        <div class="text-sm font-medium text-text-primary">Key Features:</div>
+                        <ul class="text-sm text-text-secondary space-y-1">
+                            <li>• Highway driving mastery</li>
+                            <li>• Emergency response training</li>
+                            <li>• Advanced parking techniques</li>
+                            <li>• Night driving expertise</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" alt="Instructor" class="w-10 h-10 rounded-full object-cover mr-3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div>
+                            <div class="text-sm font-medium text-primary">Suresh Menon</div>
+                            <div class="text-xs text-text-secondary">12+ Years Experience</div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3">
+                        <a href="enrollment_portal.html" class="btn-primary flex-1 text-center">Enroll Now</a>
+                        <button onclick="viewDetails('advanced-4wheeler')" class="btn-secondary px-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Systematic Learning Program -->
+                <div class="program-card card p-6 relative" data-vehicle="2-wheeler" data-methodology="systematic" data-duration="medium" data-price="mid">
+                    <div class="absolute top-4 right-4">
+                        <input type="checkbox" class="compare-checkbox w-5 h-5 text-primary" onchange="updateComparison(this)" data-program="systematic-2wheeler" />
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="badge-success">Beginner Friendly</div>
+                        <div class="flex items-center space-x-1">
+                            <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">4.7 (189 reviews)</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <img src="https://images.pixabay.com/photo/2016/04/07/06/53/bmw-1313343_1280.jpg?auto=compress&cs=tinysrgb&w=400" alt="2-Wheeler Systematic Learning" class="w-full h-48 object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-primary mb-2">2-Wheeler Systematic Learning Program</h3>
+                    <p class="text-text-secondary mb-4">Structured, milestone-based progression ideal for methodical learners who prefer step-by-step approach.</p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Duration:</span>
+                            <span class="font-medium">3 Weeks</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Practice Hours:</span>
+                            <span class="font-medium">25 Hours</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Theory Classes:</span>
+                            <span class="font-medium">15 Sessions</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Pass Rate:</span>
+                            <span class="font-medium text-secondary">94%</span>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-border pt-4 mb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-bold text-primary">₹8,500</span>
+                            <span class="text-sm text-text-secondary line-through">₹10,000</span>
+                        </div>
+                        <div class="text-sm text-secondary">EMI from ₹1,417/month</div>
+                    </div>
+
+                    <div class="space-y-2 mb-6">
+                        <div class="text-sm font-medium text-text-primary">Key Features:</div>
+                        <ul class="text-sm text-text-secondary space-y-1">
+                            <li>• Milestone-based learning</li>
+                            <li>• Progress tracking system</li>
+                            <li>• Confidence building modules</li>
+                            <li>• Flexible scheduling</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Instructor" class="w-10 h-10 rounded-full object-cover mr-3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div>
+                            <div class="text-sm font-medium text-primary">Amit Verma</div>
+                            <div class="text-xs text-text-secondary">15+ Years Experience</div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3">
+                        <a href="enrollment_portal.html" class="btn-primary flex-1 text-center">Enroll Now</a>
+                        <button onclick="viewDetails('systematic-2wheeler')" class="btn-secondary px-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Additional Programs -->
+                <div class="program-card card p-6 relative" data-vehicle="4-wheeler" data-methodology="systematic" data-duration="short" data-price="budget">
+                    <div class="absolute top-4 right-4">
+                        <input type="checkbox" class="compare-checkbox w-5 h-5 text-primary" onchange="updateComparison(this)" data-program="systematic-4wheeler" />
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="badge-success">Quick Start</div>
+                        <div class="flex items-center space-x-1">
+                            <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">4.6 (142 reviews)</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <img src="https://images.pexels.com/photos/170811/cars-audi-auto-automotive-170811.jpeg?auto=compress&cs=tinysrgb&w=400" alt="4-Wheeler Quick Start" class="w-full h-48 object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-primary mb-2">4-Wheeler Quick Start Program</h3>
+                    <p class="text-text-secondary mb-4">Fast-track systematic learning for those with some driving experience or time constraints.</p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Duration:</span>
+                            <span class="font-medium">2 Weeks</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Practice Hours:</span>
+                            <span class="font-medium">20 Hours</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Theory Classes:</span>
+                            <span class="font-medium">8 Sessions</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Pass Rate:</span>
+                            <span class="font-medium text-secondary">92%</span>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-border pt-4 mb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-bold text-primary">₹4,500</span>
+                            <span class="text-sm text-text-secondary line-through">₹6,000</span>
+                        </div>
+                        <div class="text-sm text-secondary">EMI from ₹750/month</div>
+                    </div>
+
+                    <div class="space-y-2 mb-6">
+                        <div class="text-sm font-medium text-text-primary">Key Features:</div>
+                        <ul class="text-sm text-text-secondary space-y-1">
+                            <li>• Intensive practice sessions</li>
+                            <li>• Essential skills focus</li>
+                            <li>• Test preparation</li>
+                            <li>• Flexible timings</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" alt="Instructor" class="w-10 h-10 rounded-full object-cover mr-3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div>
+                            <div class="text-sm font-medium text-primary">Suresh Menon</div>
+                            <div class="text-xs text-text-secondary">12+ Years Experience</div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3">
+                        <a href="enrollment_portal.html" class="btn-primary flex-1 text-center">Enroll Now</a>
+                        <button onclick="viewDetails('quick-4wheeler')" class="btn-secondary px-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- More programs can be added here -->
+                <div class="program-card card p-6 relative" data-vehicle="2-wheeler" data-methodology="advanced" data-duration="medium" data-price="mid">
+                    <div class="absolute top-4 right-4">
+                        <input type="checkbox" class="compare-checkbox w-5 h-5 text-primary" onchange="updateComparison(this)" data-program="advanced-2wheeler" />
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="badge-warning">Advanced</div>
+                        <div class="flex items-center space-x-1">
+                            <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">4.8 (198 reviews)</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=compress&cs=tinysrgb&w=400" alt="2-Wheeler Advanced" class="w-full h-48 object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-primary mb-2">2-Wheeler Advanced Riding Program</h3>
+                    <p class="text-text-secondary mb-4">Master advanced riding techniques, cornering, and high-speed maneuvering for experienced riders.</p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Duration:</span>
+                            <span class="font-medium">3 Weeks</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Practice Hours:</span>
+                            <span class="font-medium">28 Hours</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Theory Classes:</span>
+                            <span class="font-medium">10 Sessions</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Pass Rate:</span>
+                            <span class="font-medium text-secondary">97%</span>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-border pt-4 mb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-bold text-primary">₹9,500</span>
+                            <span class="text-sm text-text-secondary line-through">₹12,000</span>
+                        </div>
+                        <div class="text-sm text-secondary">EMI from ₹1,583/month</div>
+                    </div>
+
+                    <div class="space-y-2 mb-6">
+                        <div class="text-sm font-medium text-text-primary">Key Features:</div>
+                        <ul class="text-sm text-text-secondary space-y-1">
+                            <li>• Advanced cornering techniques</li>
+                            <li>• High-speed stability training</li>
+                            <li>• Emergency braking mastery</li>
+                            <li>• Group riding safety</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.pixabay.com/photo/2016/11/29/09/38/adult-1868750_1280.jpg" alt="Instructor" class="w-10 h-10 rounded-full object-cover mr-3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div>
+                            <div class="text-sm font-medium text-primary">Kavita Singh</div>
+                            <div class="text-xs text-text-secondary">8+ Years Experience</div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3">
+                        <a href="enrollment_portal.html" class="btn-primary flex-1 text-center">Enroll Now</a>
+                        <button onclick="viewDetails('advanced-2wheeler')" class="btn-secondary px-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="program-card card p-6 relative" data-vehicle="4-wheeler" data-methodology="deep" data-duration="long" data-price="premium">
+                    <div class="absolute top-4 right-4">
+                        <input type="checkbox" class="compare-checkbox w-5 h-5 text-primary" onchange="updateComparison(this)" data-program="deep-4wheeler" />
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="badge-success">Comprehensive</div>
+                        <div class="flex items-center space-x-1">
+                            <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">4.9 (287 reviews)</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <img src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=400" alt="4-Wheeler Deep Learning" class="w-full h-48 object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-primary mb-2">4-Wheeler Deep Learning Program</h3>
+                    <p class="text-text-secondary mb-4">Complete mastery program covering all aspects of car driving with extensive theory and practice.</p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Duration:</span>
+                            <span class="font-medium">8 Weeks</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Practice Hours:</span>
+                            <span class="font-medium">50 Hours</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Theory Classes:</span>
+                            <span class="font-medium">25 Sessions</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Pass Rate:</span>
+                            <span class="font-medium text-secondary">99%</span>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-border pt-4 mb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-bold text-primary">₹18,000</span>
+                            <span class="text-sm text-text-secondary line-through">₹22,000</span>
+                        </div>
+                        <div class="text-sm text-secondary">EMI from ₹3,000/month</div>
+                    </div>
+
+                    <div class="space-y-2 mb-6">
+                        <div class="text-sm font-medium text-text-primary">Key Features:</div>
+                        <ul class="text-sm text-text-secondary space-y-1">
+                            <li>• Complete driving mastery</li>
+                            <li>• Advanced simulator training</li>
+                            <li>• All weather conditions</li>
+                            <li>• Lifetime support access</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Instructor" class="w-10 h-10 rounded-full object-cover mr-3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div>
+                            <div class="text-sm font-medium text-primary">Amit Verma</div>
+                            <div class="text-xs text-text-secondary">15+ Years Experience</div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3">
+                        <a href="enrollment_portal.html" class="btn-primary flex-1 text-center">Enroll Now</a>
+                        <button onclick="viewDetails('deep-4wheeler')" class="btn-secondary px-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button onclick="loadMorePrograms()" class="btn-secondary">
+                    Load More Programs
+                    <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Comparison Tool -->
+    <div id="comparison-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-surface rounded-xl max-w-6xl w-full max-h-screen overflow-y-auto">
+                <div class="p-6 border-b border-border">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-semibold text-primary">Program Comparison</h2>
+                        <button onclick="closeComparison()" class="text-text-secondary hover:text-primary">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="p-6">
+                    <div id="comparison-content" class="overflow-x-auto">
+                        <!-- Comparison table will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Success Stories -->
+    <section class="py-20 bg-gradient-to-r from-primary-50 to-secondary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-accent text-primary mb-4">Success Stories by Program</h2>
+                <p class="text-lg text-text-secondary">Real transformations from our training programs</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Deep Learning Success -->
+                <div class="card p-6 text-center">
+                    <div class="mb-4">
+                        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg" alt="Priya Success Story" class="w-20 h-20 rounded-full object-cover mx-auto mb-4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <h4 class="font-semibold text-primary">Priya Sharma</h4>
+                        <p class="text-sm text-text-secondary">Deep Learning Graduate</p>
+                    </div>
+                    <div class="mb-4">
+                        <div class="text-sm text-text-secondary mb-2">Confidence Transformation:</div>
+                        <div class="flex justify-center space-x-2 mb-2">
+                            <span class="text-xs text-error">Before: 2/10</span>
+                            <span class="text-xs text-secondary">After: 10/10</span>
+                        </div>
+                        <div class="progress-bar h-2 mb-2">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary italic text-sm mb-4">"The Deep Learning program gave me the theoretical foundation I needed. Now I drive with complete confidence in any situation."</p>
+                    <div class="text-sm text-secondary font-medium">✓ First Attempt Pass</div>
+                </div>
+
+                <!-- Advanced Learning Success -->
+                <div class="card p-6 text-center">
+                    <div class="mb-4">
+                        <img src="https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Rajesh Success Story" class="w-20 h-20 rounded-full object-cover mx-auto mb-4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <h4 class="font-semibold text-primary">Rajesh Kumar</h4>
+                        <p class="text-sm text-text-secondary">Advanced Learning Graduate</p>
+                    </div>
+                    <div class="mb-4">
+                        <div class="text-sm text-text-secondary mb-2">Skills Enhancement:</div>
+                        <div class="flex justify-center space-x-2 mb-2">
+                            <span class="text-xs text-warning">Before: 6/10</span>
+                            <span class="text-xs text-secondary">After: 10/10</span>
+                        </div>
+                        <div class="progress-bar h-2 mb-2">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary italic text-sm mb-4">"Advanced Learning took my existing skills to the next level. I can now handle any complex driving scenario with ease."</p>
+                    <div class="text-sm text-secondary font-medium">✓ Advanced Certification</div>
+                </div>
+
+                <!-- Systematic Learning Success -->
+                <div class="card p-6 text-center">
+                    <div class="mb-4">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786" alt="Anita Success Story" class="w-20 h-20 rounded-full object-cover mx-auto mb-4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <h4 class="font-semibold text-primary">Anita Patel</h4>
+                        <p class="text-sm text-text-secondary">Systematic Learning Graduate</p>
+                    </div>
+                    <div class="mb-4">
+                        <div class="text-sm text-text-secondary mb-2">Learning Progress:</div>
+                        <div class="flex justify-center space-x-2 mb-2">
+                            <span class="text-xs text-error">Before: 0/10</span>
+                            <span class="text-xs text-secondary">After: 9/10</span>
+                        </div>
+                        <div class="progress-bar h-2 mb-2">
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary italic text-sm mb-4">"The systematic approach was perfect for me. Each milestone built my confidence step by step."</p>
+                    <div class="text-sm text-secondary font-medium">✓ Milestone Achievement</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-r from-primary to-primary-700 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-accent mb-6">Ready to Begin Your Training Journey?</h2>
+            <p class="text-xl mb-8 opacity-90">Choose your perfect program and start building confidence on the road today</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="enrollment_portal.html" class="bg-secondary hover:bg-secondary-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-elevated">
+                    Enroll in a Program
+                </a>
+                <a href="contact_hub.html" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300">
+                    Get Free Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-1">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="20" fill="#1e40af"/>
+                            <path d="M12 20c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8-8-3.6-8-8z" fill="#10b981"/>
+                            <path d="M16 20h8M20 16v8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <div class="ml-2">
+                            <h3 class="text-lg font-accent">EduVerse</h3>
+                            <p class="text-xs text-gray-400">Driving Academy</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Empowering confident drivers through personalized education and expert instruction.</p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z.017-.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="homepage.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="training_programs.html" class="text-gray-400 hover:text-white transition-colors">Training Programs</a></li>
+                        <li><a href="about_edu_verse.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact_hub.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="enrollment_portal.html" class="text-gray-400 hover:text-white transition-colors">Enroll Now</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Our Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="training_programs.html" class="text-gray-400 hover:text-white transition-colors">2-Wheeler Training</a></li>
+                        <li><a href="training_programs.html" class="text-gray-400 hover:text-white transition-colors">4-Wheeler Training</a></li>
+                        <li><a href="training_programs.html" class="text-gray-400 hover:text-white transition-colors">Refresher Courses</a></li>
+                        <li><a href="training_programs.html" class="text-gray-400 hover:text-white transition-colors">Advanced Training</a></li>
+                        <li><a href="student_dashboard.html" class="text-gray-400 hover:text-white transition-colors">Student Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            123 Driving Street, Mumbai, India
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            +91 98765 43210
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            info@eduverse.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-400">
+                <p>© 2025 EduVerse Driving Academy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global variables
+        let selectedPrograms = [];
+        let allPrograms = [];
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Filter programs based on selected criteria
+        function filterPrograms() {
+            const vehicleFilter = document.getElementById('vehicle-filter').value;
+            const methodologyFilter = document.getElementById('methodology-filter').value;
+            const durationFilter = document.getElementById('duration-filter').value;
+            const priceFilter = document.getElementById('price-filter').value;
+
+            const programCards = document.querySelectorAll('.program-card');
+            let visibleCount = 0;
+
+            programCards.forEach(card => {
+                let show = true;
+
+                // Vehicle filter
+                if (vehicleFilter && !card.dataset.vehicle.includes(vehicleFilter)) {
+                    show = false;
+                }
+
+                // Methodology filter
+                if (methodologyFilter && !card.dataset.methodology.includes(methodologyFilter)) {
+                    show = false;
+                }
+
+                // Duration filter
+                if (durationFilter && !card.dataset.duration.includes(durationFilter)) {
+                    show = false;
+                }
+
+                // Price filter
+                if (priceFilter && !card.dataset.price.includes(priceFilter)) {
+                    show = false;
+                }
+
+                if (show) {
+                    card.style.display = 'block';
+                    card.classList.add('fade-in');
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update results count
+            document.getElementById('results-count').textContent = `Showing ${visibleCount} programs`;
+        }
+
+        // Reset all filters
+        function resetFilters() {
+            document.getElementById('vehicle-filter').value = '';
+            document.getElementById('methodology-filter').value = '';
+            document.getElementById('duration-filter').value = '';
+            document.getElementById('price-filter').value = '';
+            
+            const programCards = document.querySelectorAll('.program-card');
+            programCards.forEach(card => {
+                card.style.display = 'block';
+            });
+
+            document.getElementById('results-count').textContent = `Showing ${programCards.length} programs`;
+        }
+
+        // Sort programs
+        function sortPrograms() {
+            const sortValue = document.getElementById('sort-filter').value;
+            const programsGrid = document.getElementById('programs-grid');
+            const programCards = Array.from(programsGrid.children);
+
+            programCards.sort((a, b) => {
+                switch (sortValue) {
+                    case 'price-low':
+                        const priceA = parseInt(a.querySelector('.text-2xl').textContent.replace(/[^\d]/g, ''));
+                        const priceB = parseInt(b.querySelector('.text-2xl').textContent.replace(/[^\d]/g, ''));
+                        return priceA - priceB;
+                    case 'price-high':
+                        const priceA2 = parseInt(a.querySelector('.text-2xl').textContent.replace(/[^\d]/g, ''));
+                        const priceB2 = parseInt(b.querySelector('.text-2xl').textContent.replace(/[^\d]/g, ''));
+                        return priceB2 - priceA2;
+                    case 'duration':
+                        const durationA = a.dataset.duration;
+                        const durationB = b.dataset.duration;
+                        const durationOrder = { 'short': 1, 'medium': 2, 'long': 3 };
+                        return durationOrder[durationA] - durationOrder[durationB];
+                    case 'rating':
+                        const ratingA = parseFloat(a.querySelector('.text-text-secondary').textContent);
+                        const ratingB = parseFloat(b.querySelector('.text-text-secondary').textContent);
+                        return ratingB - ratingA;
+                    default:
+                        return 0;
+                }
+            });
+
+            // Clear and re-append sorted cards
+            programsGrid.innerHTML = '';
+            programCards.forEach(card => programsGrid.appendChild(card));
+        }
+
+        // Update comparison selection
+        function updateComparison(checkbox) {
+            const programId = checkbox.dataset.program;
+            
+            if (checkbox.checked) {
+                if (selectedPrograms.length < 3) {
+                    selectedPrograms.push(programId);
+                } else {
+                    checkbox.checked = false;
+                    alert('You can compare up to 3 programs at a time.');
+                    return;
+                }
+            } else {
+                selectedPrograms = selectedPrograms.filter(id => id !== programId);
+            }
+
+            // Update compare button
+            const compareBtn = document.getElementById('compare-btn');
+            if (selectedPrograms.length > 0) {
+                compareBtn.disabled = false;
+                compareBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                compareBtn.textContent = `Compare Selected (${selectedPrograms.length})`;
+            } else {
+                compareBtn.disabled = true;
+                compareBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                compareBtn.textContent = 'Compare Selected (0)';
+            }
+        }
+
+        // Toggle comparison modal
+        function toggleComparison() {
+            if (selectedPrograms.length === 0) return;
+            
+            const modal = document.getElementById('comparison-modal');
+            modal.classList.remove('hidden');
+            generateComparisonTable();
+        }
+
+        // Close comparison modal
+        function closeComparison() {
+            const modal = document.getElementById('comparison-modal');
+            modal.classList.add('hidden');
+        }
+
+        // Generate comparison table
+        function generateComparisonTable() {
+            const content = document.getElementById('comparison-content');
+            
+            // Mock comparison data
+            const comparisonData = {
+                'deep-2wheeler': {
+                    name: '2-Wheeler Deep Learning',
+                    price: '₹12,500',
+                    duration: '6 Weeks',
+                    hours: '40 Hours',
+                    theory: '20 Sessions',
+                    passRate: '98%',
+                    features: ['Advanced simulator', 'Traffic psychology', 'Defensive riding', 'Weather training']
+                },
+                'advanced-4wheeler': {
+                    name: '4-Wheeler Advanced Learning',
+                    price: '₹15,000',
+                    duration: '4 Weeks',
+                    hours: '30 Hours',
+                    theory: '12 Sessions',
+                    passRate: '96%',
+                    features: ['Highway driving', 'Emergency response', 'Advanced parking', 'Night driving']
+                },
+                'systematic-2wheeler': {
+                    name: '2-Wheeler Systematic Learning',
+                    price: '₹8,500',
+                    duration: '3 Weeks',
+                    hours: '25 Hours',
+                    theory: '15 Sessions',
+                    passRate: '94%',
+                    features: ['Milestone-based', 'Progress tracking', 'Confidence building', 'Flexible scheduling']
+                }
+            };
+
+            let tableHTML = `
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="border-b border-border">
+                            <th class="text-left p-4 font-semibold text-primary">Feature</th>
+            `;
+
+            selectedPrograms.forEach(programId => {
+                if (comparisonData[programId]) {
+                    tableHTML += `<th class="text-center p-4 font-semibold text-primary">${comparisonData[programId].name}</th>`;
+                }
+            });
+
+            tableHTML += `
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-border">
+                            <td class="p-4 font-medium">Price</td>
+            `;
+
+            selectedPrograms.forEach(programId => {
+                if (comparisonData[programId]) {
+                    tableHTML += `<td class="text-center p-4 text-primary font-bold">${comparisonData[programId].price}</td>`;
+                }
+            });
+
+            tableHTML += `
+                        </tr>
+                        <tr class="border-b border-border">
+                            <td class="p-4 font-medium">Duration</td>
+            `;
+
+            selectedPrograms.forEach(programId => {
+                if (comparisonData[programId]) {
+                    tableHTML += `<td class="text-center p-4">${comparisonData[programId].duration}</td>`;
+                }
+            });
+
+            tableHTML += `
+                        </tr>
+                        <tr class="border-b border-border">
+                            <td class="p-4 font-medium">Practice Hours</td>
+            `;
+
+            selectedPrograms.forEach(programId => {
+                if (comparisonData[programId]) {
+                    tableHTML += `<td class="text-center p-4">${comparisonData[programId].hours}</td>`;
+                }
+            });
+
+            tableHTML += `
+                        </tr>
+                        <tr class="border-b border-border">
+                            <td class="p-4 font-medium">Theory Sessions</td>
+            `;
+
+            selectedPrograms.forEach(programId => {
+                if (comparisonData[programId]) {
+                    tableHTML += `<td class="text-center p-4">${comparisonData[programId].theory}</td>`;
+                }
+            });
+
+            tableHTML += `
+                        </tr>
+                        <tr class="border-b border-border">
+                            <td class="p-4 font-medium">Pass Rate</td>
+            `;
+
+            selectedPrograms.forEach(programId => {
+                if (comparisonData[programId]) {
+                    tableHTML += `<td class="text-center p-4 text-secondary font-semibold">${comparisonData[programId].passRate}</td>`;
+                }
+            });
+
+            tableHTML += `
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-medium">Key Features</td>
+            `;
+
+            selectedPrograms.forEach(programId => {
+                if (comparisonData[programId]) {
+                    const features = comparisonData[programId].features.map(f => `• ${f}`).join('<br>');
+                    tableHTML += `<td class="text-center p-4 text-sm">${features}</td>`;
+                }
+            });
+
+            tableHTML += `
+                        </tr>
+                    </tbody>
+                </table>
+            `;
+
+            content.innerHTML = tableHTML;
+        }
+
+        // View program details
+        function viewDetails(programId) {
+            // This would typically open a detailed view or navigate to a program detail page
+            alert(`Viewing details for program: ${programId}`);
+        }
+
+        // Load more programs
+        function loadMorePrograms() {
+            // This would typically load more programs from the server
+            alert('Loading more programs...');
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation classes to cards
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.program-card, .card').forEach(card => {
+                observer.observe(card);
+            });
+
+            // Populate recommended programs (mock data)
+            const recommendedContainer = document.getElementById('recommended-programs');
+            const recommendedHTML = `
+                <div class="card p-6 border-2 border-secondary">
+                    <div class="text-center mb-4">
+                        <div class="badge-success mb-2">Recommended</div>
+                        <h3 class="text-lg font-semibold text-primary">Based on your preferences</h3>
+                    </div>
+                    <img src="https://images.pexels.com/photos/2116475/pexels-photo-2116475.jpeg" alt="Recommended Program" class="w-full h-32 object-cover rounded-lg mb-4" loading="lazy">
+                    <h4 class="font-semibold text-primary mb-2">2-Wheeler Deep Learning</h4>
+                    <p class="text-sm text-text-secondary mb-4">Perfect match for thorough learners</p>
+                    <a href="enrollment_portal.html" class="btn-primary w-full text-center">Start This Program</a>
+                </div>
+            `;
+            recommendedContainer.innerHTML = recommendedHTML;
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
